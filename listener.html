@@ -1,0 +1,35 @@
+
+document.getElementById("myBtn").addEventListener("click", displayDate); 
+The addEventListener() method attaches an event handler to the specified element.
+
+<!-- The addEventListener() method attaches an event handler to an element without overwriting existing event handlers.
+You can add many event handlers to one element.
+You can add many event handlers of the same type to one element, i.e two "click" events. -->
+
+<!--------------------- Syntax------------------ -->
+element.addEventListener(event, function, useCapture);
+
+<!-- ---------------------------------------- -->
+element.addEventListener("click", myFunction);
+
+function myFunction() {
+  alert ("Hello World!");
+} 
+
+<!-- Add Many Event Handlers to the Same Element -->
+The addEventListener() method allows you to add many events to the same element, without overwriting existing events:
+You can add events of different types to the same element:
+
+element.addEventListener("mouseover", myFunction);
+element.addEventListener("click", mySecondFunction);
+element.addEventListener("mouseout", myThirdFunction); 
+
+<!-- Event Bubbling or Event Capturing? -->
+In bubbling the inner most element's event is handled first and then the outer: the <p> element's click event is handled first, then the <div> element's click event.
+In capturing the outer most element's event is handled first and then the inner: the <div> element's click event will be handled first, then the <p> element's click event.
+
+    addEventListener(event, function, useCapture);
+
+    <!-- The removeEventListener() method -->
+    The removeEventListener() method removes event handlers that have been attached with the addEventListener() method:
+    element.removeEventListener("mousemove", myFunction); 
